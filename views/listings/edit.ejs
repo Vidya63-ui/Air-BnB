@@ -1,0 +1,55 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+  <div class="row">
+    <div class="col-8 offset-2">
+  <form method="POST" action="/listings/<%= listing._id %>?_method=PUT" novalidate class=" needs-validation">
+    <br><br>
+  <h3>Edit Your Listing Listing</h3>
+  <br><br>
+    <div class="mb-3">
+      <label for="name" class="form-label">Title : </label>
+       <input id="name" type="text" name="listing[title]" required="true" value= "<%= listing.title %>"class="form-control">
+       <div class="valid-feedback">Title Looks good!</div>
+    </div>
+    <div class="mb-3">
+      <label for="descripton" class="form-label">Description : </label>
+      <textarea name="listing[dscrpt]" id="descripton" class="form-control"> <%= listing.dscrpt %> </textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="Image" class="form-label">Image Link : </label>
+      <input id="Image" type="text" name="listing[img]" value=<%= listing.img %> class="form-control" required>
+    </div>
+
+    <div class="row">
+      <div class="mb-3 col-md-4">
+        <label for="Price" class="form-label">Price : </label>
+        <input id="Price" type="number" name="listing[price]" required="true" value=<%= listing.price %> class="form-control">
+        <div class="invalid-feedback">Price Should be valid</div>
+      </div>
+
+      <div class="mb-3 col-md-8">
+        <label for="country" class="form-label" >Country: </label>
+      <input id="country" type="text" name="listing[country]" required="true"  value=<%= listing.country %> class="form-control">
+      <div class="invalid-feedback">The Country name Should be valid</div>
+      </div>
+      
+    </div>
+    
+    
+    
+    <div class="mb-3">
+      <label for="location" class="form-label">Location : </label>
+      <input id="location" type="text" name="listing[location]" required="true" value="<%= listing.location %>" class="form-control">
+      <div class="invalid-feedback"> Location Should be valid</div>
+    </div>
+    <br><br>
+    
+    <button class="btn btn-dark add-btn">Edit Listing</button>
+  </form>
+  <br>
+  <br>
+</div>
+</div>
+ 
+</body>
